@@ -1,0 +1,74 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.torneos {
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)), url('/public/imgs/slider/hombre-padel.jpg');
+    }
+
+    .container-torneos {
+        >h2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-style: italic;
+            margin: 2rem 0;
+        }
+
+        .cards-torneos {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: v.$blanco;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+
+            @include m.telefono {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include m.tablet {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .card-torneo {
+                box-shadow: v.$box-shadow;
+                margin: 0 auto;
+                max-width: 40rem;
+
+                .card-container {
+                    padding: 0 1.6rem;
+                    overflow: hidden;
+                    max-height: 12.5rem;
+
+                    p {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                .btn-verTorneo {
+                    display: block;
+                    margin: 1.6rem;
+                    color: v.$blanco;
+                    background-color: v.$azul;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    transition: background-color .15s ease-in-out,
+                        border .15s ease-in-out;
+
+                    &:hover {
+                        background-color: v.$azul-oscuro;
+                        border-color: v.$azul-oscuro;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.container-torneo {
+    .mostrar__torneo {
+        padding: 2rem;
+    }
+}

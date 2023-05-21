@@ -1,0 +1,60 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.conocenos {
+    .container-conocenos {
+        display: flex;
+        flex-direction: column;
+
+        .conocenos__pasado,
+        .conocenos__presente,
+        .conocenos__futuro {
+            padding: 2rem;
+            margin: 2rem 0;
+            background-color: v.$blanco;
+            border-radius: .8rem;
+            box-shadow: v.$box-shadow;
+
+            .conocenos__pasado--titulo,
+            .conocenos__presente--titulo,
+            .conocenos__futuro--titulo {
+                text-transform: uppercase;
+                font-style: italic;
+            }
+
+            .conocenos__pasado--contenido,
+            .conocenos__presente--contenido,
+            .conocenos__futuro--contenido {
+
+                .conocenos__pasado--imagen,
+                .conocenos__presente--imagen,
+                .conocenos__futuro--imagen {
+                    width: 100%;
+                    float: right;
+                    margin: 0 0 2rem 0;
+
+                    @include m.tablet {
+                        width: 40%;
+                        margin: 0 0 0 2rem;
+                    }
+                }
+
+                p {
+                    margin: 0 0 2rem 0;
+                    text-align: justify;
+                    font-size: 1.8rem;
+
+                    &:last-of-type {
+                        margin: 0;
+                    }
+                }
+
+            }
+        }
+
+        .conocenos__presente,
+        .conocenos__futuro {
+            margin: 0 0 2rem 0;
+        }
+    }
+}

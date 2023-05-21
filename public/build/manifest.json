@@ -1,0 +1,20 @@
+{
+  "public/imgs/slider/hombre-padel.jpg": {
+    "file": "assets/hombre-padel-1ed0689c.jpg",
+    "src": "public/imgs/slider/hombre-padel.jpg"
+  },
+  "public/imgs/slider/kids-lloyd-1-1-1.png": {
+    "file": "assets/kids-lloyd-1-1-1-ea99c7a3.png",
+    "src": "public/imgs/slider/kids-lloyd-1-1-1.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-6139d6eb.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-bf5e377f.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}

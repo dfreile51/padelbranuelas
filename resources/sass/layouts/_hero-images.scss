@@ -1,0 +1,29 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.hero-image {
+    height: 55rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero-text {
+        color: v.$blanco;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            letter-spacing: 1rem;
+            margin: 0;
+        }
+    }
+}

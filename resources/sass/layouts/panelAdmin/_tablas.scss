@@ -1,0 +1,81 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.admin__usuarios,
+.admin__comentarios,
+.admin__reservas,
+.admin__torneos {
+
+    .usuarios__table,
+    .comentarios__table,
+    .reservas__table,
+    .oldReservas__table,
+    .torneos__table {
+        overflow: hidden;
+        background-color: v.$blanco;
+        padding: 2rem;
+        border-radius: .8rem;
+        box-shadow: v.$box-shadow;
+
+        .btn-primary {
+            margin-bottom: 2rem;
+        }
+
+        #table__usuarios,
+        #table__comentarios,
+        #table__reservas,
+        #table__oldReservas,
+        #table__torneos {
+            padding-top: 1rem;
+
+            thead {
+                color: v.$blanco;
+                background-color: v.$azul;
+            }
+
+            tbody {
+                td {
+                    &.acciones {
+
+                        .btn-show,
+                        .btn-editar,
+                        .btn-eliminar {
+                            padding: .5rem .8rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        #table__usuarios_paginate,
+        #table__comentarios_paginate,
+        #table__reservas_paginate,
+        #table__oldReservas_paginate,
+        #table__torneos_paginate {
+
+            .paginate_button {
+                border: none;
+                box-shadow: none;
+
+                &:not(.disabled):hover {
+                    color: v.$negro !important;
+                    background: v.$gris-border;
+                }
+            }
+
+            span {
+                .paginate_button {
+                    &.current {
+                        color: v.$blanco !important;
+                        background: v.$azul;
+
+                        &:hover {
+                            color: v.$blanco !important;
+                            background: v.$azul;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

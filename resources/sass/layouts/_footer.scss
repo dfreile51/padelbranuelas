@@ -1,0 +1,51 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.footer {
+    -webkit-box-shadow: 0 -0.5rem 1rem rgba(var(33, 37, 41, 0.15), 0.15);
+    -moz-box-shadow: 0 -0.5rem 1rem rgba(var(33, 37, 41, 0.15), 0.15);
+    box-shadow: 0 -0.5rem 1rem rgba(33, 37, 41, 0.15);
+    background-color: v.$gris-claro;
+    color: v.$gris;
+    // margin-top: auto;
+
+    .logo {
+        width: 8.5rem;
+        grid-row: 2 / 3;
+        grid-column: 1 / 4;
+        margin: 0 auto;
+    }
+
+    .contenido-footer {
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 2rem;
+        }
+    }
+
+    .footer-card {
+        padding: 2rem 0;
+
+        h3 {
+            border-bottom: .1rem solid v.$gris;
+            line-height: 1.5;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        span:first-of-type {
+            font-weight: bold;
+
+        }
+
+        span,
+        a {
+            font-size: 1.2rem;
+        }
+
+        i {
+            margin-right: .5rem;
+        }
+    }
+}

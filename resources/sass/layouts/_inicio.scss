@@ -1,0 +1,193 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.cards {
+    background-color: v.$blanco;
+}
+
+.slider,
+.cards,
+.municipio {
+    padding: 2rem 0;
+}
+
+/* SLIDER DE IMAGENES */
+.container-slider {
+    position: relative;
+    max-height: 70rem;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    .slider__section {
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .slider__btn {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .slider__dots {
+            align-self: flex-end;
+
+            .dot {
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                margin: 0 .2rem;
+                background-color: #bbb;
+                display: inline-block;
+                transition: background-color .6s ease;
+                border-radius: 50%;
+            }
+
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+        }
+
+
+        i {
+            width: 4rem;
+            text-align: center;
+            line-height: 4rem;
+            cursor: pointer;
+            color: v.$blanco;
+            transition: .6s ease;
+            font-size: 2rem;
+            border-radius: 0 .5rem .5rem 0;
+            user-select: none;
+        }
+
+        .fa-chevron-right {
+            border-radius: .5rem 0 0 .5rem;
+        }
+
+        .fa-chevron-right:hover,
+        .fa-chevron-left:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+}
+
+/* CARDS */
+.container-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    @include m.telefono {
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .card__item {
+        max-width: 60%;
+        overflow: hidden;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+
+        @include m.telefono {
+            max-width: 30%;
+            margin-bottom: 0;
+        }
+
+        @include m.tablet {
+            max-width: 18%;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        .card__item--text {
+            text-transform: uppercase;
+            text-align: center;
+            color: v.$blanco;
+            background-color: v.$azul;
+            margin-top: 1rem;
+            padding: 1rem 0;
+        }
+    }
+}
+
+/* MAPA CON MARCADORES */
+.container-municipio {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    @include m.tablet {
+        flex-direction: row;
+        row-gap: 0;
+    }
+
+    .municipio__map,
+    .municipio__locations {
+        width: 100%;
+
+        @include m.tablet {
+            width: 50%;
+        }
+    }
+
+    .municipio__map {
+        height: 40rem;
+    }
+
+    .municipio__locations {
+        @include m.tablet {
+            padding: 0 0 0 4rem;
+        }
+
+        h2 {
+            text-align: center;
+
+            @include m.tablet {
+                text-align: left;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 2rem;
+            line-height: 3.2rem;
+
+            @include m.tablet {
+                justify-content: start;
+            }
+        }
+    }
+}

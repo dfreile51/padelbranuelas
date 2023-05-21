@@ -1,0 +1,63 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.tarifa {
+    background-color: v.$blanco;
+
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)), url('/public/imgs/slider/kids-lloyd-1-1-1.png');
+    }
+
+    .container-tableTarifa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: v.$box-shadow;
+
+            @include m.tablet {
+                width: 50%;
+            }
+
+            thead,
+            tbody {
+                tr {
+
+                    th,
+                    td {
+                        padding: 1rem;
+                    }
+                }
+            }
+
+            thead {
+                tr {
+                    background-color: v.$azul;
+                    color: v.$blanco;
+                    text-align: left;
+                    text-transform: uppercase;
+
+                    span {
+                        text-transform: lowercase;
+                    }
+                }
+            }
+
+            tbody {
+                tr:nth-child(even) {
+                    background-color: v.$gris-border;
+                }
+
+                tr {
+                    span {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

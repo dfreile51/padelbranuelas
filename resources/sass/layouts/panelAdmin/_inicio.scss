@@ -1,0 +1,66 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.admin__inicio,
+.admin__usuarios,
+.agregar__usuario,
+.editar__usuario,
+.mostrar__usuario,
+.admin__comentarios,
+.admin__reservas,
+.admin__torneos,
+.agregar__torneo,
+.mostrar__torneo,
+.mostrar__comentario {
+    h2 {
+        margin-top: 2rem;
+    }
+}
+
+.admin__inicio {
+    .inicio__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include m.desktopXXL {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .inicio__cards--card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            color: v.$gris-inputs;
+            background: v.$blanco;
+            box-shadow: v.$box-shadow;
+            border-radius: .8rem;
+
+            .inicio__cards--datos {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                span {
+                    &:nth-child(1) {
+                        font-size: 4rem;
+                        font-weight: bold;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+            i {
+                padding-left: 9rem;
+                font-size: 5rem;
+            }
+        }
+    }
+}

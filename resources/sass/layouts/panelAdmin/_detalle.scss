@@ -1,0 +1,134 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.mostrar__usuario {
+    .usuario__detalle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .usuario__detalle {
+        background-color: v.$blanco;
+        padding: 2rem 0;
+        border-radius: .8rem;
+        box-shadow: v.$box-shadow;
+
+        .detalle__card {
+            padding: 0 1rem;
+            border-radius: .8rem;
+            box-shadow: v.$box-shadow;
+
+            .detalle__card--header {
+                padding: 1rem 0;
+
+                .imagen {
+                    height: 17.8rem;
+                    width: 17.8rem;
+                    border-radius: 100%;
+                    margin: auto;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        margin: auto;
+                    }
+                }
+            }
+
+            .detalle__card--body {
+                h5 {
+                    margin: 0;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 2rem 0;
+                    margin: 0;
+                    line-height: 2.5rem;
+                }
+            }
+
+            .detalle__card--footer {
+                padding: 1rem 0;
+            }
+        }
+    }
+}
+
+.mostrar__torneo {
+    .detalle__general {
+        @include m.desktop {
+            display: flex;
+        }
+
+        .torneo__imagen,
+        .torneo__info {
+            @include m.desktop {
+                width: 50%;
+            }
+        }
+
+        .torneo__info {
+            padding: 2rem;
+
+            .info__card {
+                box-shadow: v.$box-shadow;
+                background-color: v.$blanco;
+                padding: 2rem;
+
+                p {
+                    margin-top: 0;
+                }
+
+                .info__card--email {
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 2rem;
+
+                    span {
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mostrar__comentario {
+    .comentario__detalle {
+        background-color: v.$blanco;
+        padding: 2rem 1rem;
+        border-radius: .8rem;
+        box-shadow: v.$box-shadow;
+
+        .comentario__detalle--nombre,
+        .comentario__detalle--email,
+        .comentario__detalle--mensaje {
+            font-weight: bold;
+        }
+
+        .comentario__detalle--email,
+        .comentario__detalle--nombre {
+            display: block;
+            margin-bottom: 2rem;
+
+            span {
+                font-weight: normal;
+            }
+        }
+
+        .comentario__detalle--mensaje {
+            span {
+                font-weight: normal;
+            }
+        }
+
+        .comentario__detalle--hora {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: v.$gris-500;
+        }
+    }
+}

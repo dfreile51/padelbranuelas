@@ -1,0 +1,90 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+#menu {
+    background-color: #111827;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    overflow: auto;
+    transition: width .5s;
+
+    @include m.tablet {
+        width: 30rem;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: v.$blanco;
+
+        img {
+            width: 15rem;
+        }
+    }
+
+    .items {
+        margin-top: 4rem;
+
+        a {
+            display: block;
+            padding: .8rem 0 .8rem 1.5rem;
+            color: rgb(134, 141, 151);
+            transition: .3s ease;
+
+            &:hover {
+                background: #253047;
+                color: v.$blanco;
+            }
+
+            &:nth-child(1) {
+                border-left: .4rem solid v.$blanco;
+            }
+        }
+    }
+
+    .closebtn {
+        @include m.tablet {
+            display: none;
+        }
+
+        color: rgb(134, 141, 151);
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+        font-size: 3.6rem;
+        transition: .3s ease;
+
+        &:hover {
+            color: v.$blanco
+        }
+    }
+
+    .footerBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 2rem 1.5rem;
+
+        a,
+        button {
+            color: rgb(134, 141, 151);
+            transition: .3s ease;
+
+            &:hover {
+                color: v.$blanco;
+            }
+        }
+
+        button {
+            background-color: unset;
+            border: unset;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: v.$gris-50;
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+}
+
+p {
+    font-size: 2rem;
+    color: v.$negro;
+    line-height: 1.5;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 150rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 5rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 3rem
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.botones {
+    border: .1rem solid v.$azul;
+    padding: .8rem;
+    border-radius: .7rem;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.error,
+.success {
+    color: v.$blanco;
+    margin: .8rem 0;
+    padding: .8rem;
+    border-radius: .8rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.error {
+    background-color: v.$rojo-500;
+}
+
+.success {
+    background-color: v.$verde-500;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.btn-primary {
+    display: inline-block;
+    color: v.$blanco;
+    background-color: v.$azul;
+    transition: color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border .15s ease-in-out;
+
+    &:hover {
+        background-color: v.$azul-oscuro;
+        border-color: v.$azul-oscuro;
+    }
+
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.mensaje-warning {
+    text-transform: uppercase;
+    color: v.$gris-500;
+    font-weight: bold;
+}
+
+.btn-show,
+.btn-editar,
+.btn-eliminar {
+    color: v.$blanco;
+    transition: color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border-color .15s ease-in-out;
+}
+
+.btn-eliminar {
+    border: .1rem solid v.$rojo-500;
+    background-color: v.$rojo-500;
+    color: v.$blanco;
+    cursor: pointer;
+
+    &:hover {
+        background-color: v.$rojo-600;
+        border: .1rem solid v.$rojo-600;
+    }
+}
+
+.btn-show {
+    background-color: v.$info;
+    border-color: v.$info;
+
+    &:hover {
+        background-color: v.$info-hover;
+        border-color: v.$info-hover;
+    }
+}
+
+.btn-editar {
+    background-color: v.$editar;
+    border-color: v.$editar;
+
+    &:hover {
+        background-color: v.$editar-hover;
+        border-color: v.$editar-hover;
+    }
+}
