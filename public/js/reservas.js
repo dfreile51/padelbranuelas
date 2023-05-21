@@ -55,7 +55,7 @@ function insertBooking(e) {
             "user_id": localStorage.getItem('user_id')
         };
 
-        fetch(`http://localhost:8000/api/reservas/insert?email=${email}`, {
+        fetch(`https://padelbranuelas-production.up.railway.app/api/reservas/insert?email=${email}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ function getBookings() {
         }
     });
 
-    fetch(`http://localhost:8000/api/reservas/get`, {
+    fetch(`https://padelbranuelas-production.up.railway.app/api/reservas/get`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
