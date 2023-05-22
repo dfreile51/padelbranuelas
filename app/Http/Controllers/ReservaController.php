@@ -26,15 +26,17 @@ class ReservaController extends Controller
         $reservas = Reserva::where('user_id', auth()->user()->id)
             ->where('fecha', '>', now()->toDateString())
             ->orWhere(function (Builder $query) {
-                $query->where('fecha', '>=',now()->toDateString())
-                    ->where('hora', '>',now()->toTimeString());
+                $query->where('user_id', auth()->user()->id)
+                    ->where('fecha', '>=', now()->toDateString())
+                    ->where('hora', '>', now()->toTimeString());
             })
             ->orderBy('created_at', 'desc')->get();
 
         $oldReservas = Reserva::where('user_id', auth()->user()->id)
             ->where('fecha', '<', now()->toDateString())
             ->orWhere(function (Builder $query) {
-                $query->where('fecha', '<=',now()->toDateString())
+                $query->where('user_id', auth()->user()->id)
+                    ->where('fecha', '<=', now()->toDateString())
                     ->where('hora', '<=', now()->toTimeString());
             })
             ->orderBy('created_at', 'desc')->get();
@@ -127,14 +129,14 @@ class ReservaController extends Controller
     {
         $reservas = Reserva::where('fecha', '>', now()->toDateString())
             ->orWhere(function (Builder $query) {
-                $query->where('fecha', '>=',now()->toDateString())
-                    ->where('hora', '>',now()->toTimeString());
+                $query->where('fecha', '>=', now()->toDateString())
+                    ->where('hora', '>', now()->toTimeString());
             })
             ->orderBy('created_at', 'desc')->get();
 
         $oldReservas = Reserva::where('fecha', '<', now()->toDateString())
             ->orWhere(function (Builder $query) {
-                $query->where('fecha', '<=',now()->toDateString())
+                $query->where('fecha', '<=', now()->toDateString())
                     ->where('hora', '<=', now()->toTimeString());
             })
             ->orderBy('created_at', 'desc')->get();
