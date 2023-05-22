@@ -18,7 +18,7 @@ async function generateToken() {
         'password': inputPassword
     }
 
-    await fetch('https://padelbranuelas-production.up.railway.app/api/getToken', {
+    await fetch(`${location.origin}/api/getToken`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
