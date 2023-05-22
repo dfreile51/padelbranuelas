@@ -64,7 +64,3 @@
         </form>
     </div>
 @endsection
-
-@push('js')
-    <script src="{{ asset('js/dropdown-menu.js') }}"></script>
-@endpush
