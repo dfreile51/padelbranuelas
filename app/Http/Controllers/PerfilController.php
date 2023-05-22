@@ -38,7 +38,6 @@ class PerfilController extends Controller
             $nombreImagen = Str::uuid() . "." . $imagen->extension();
 
             $imagenServidor = Image::make($imagen);
-            // $imagenServidor->fit(1000, 1000);
 
             $imagenPath = public_path('perfiles') . "/" . $nombreImagen;
             $imagenServidor->save($imagenPath);

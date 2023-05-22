@@ -86,6 +86,5 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('js/dropdown-menu.js') }}"></script>
     <script src="{{ asset('js/preview-imagen.js') }}"></script>
 @endpush
