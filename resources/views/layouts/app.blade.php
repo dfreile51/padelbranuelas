@@ -76,7 +76,7 @@
                         <div class="botones-header">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="botones" id="logout">Cerrar Sesión</button>
+                                <button type="submit" class="botones btnLogOut">Cerrar Sesión</button>
                             </form>
                         </div>
                     @endauth
@@ -116,7 +116,7 @@
                         @endif
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit" class="botones" id="logout">Cerrar Sesión</button>
+                            <button type="submit" class="botones btnLogOut">Cerrar Sesión</button>
                         </form>
                     </div>
                 @endauth
@@ -165,7 +165,7 @@
     @auth
         <script>
             const userId = document.querySelector('span.hidden').textContent;
-            const btnLogOut = document.querySelector('#logout');
+            const btnLogOut = document.querySelector('.btnLogOut');
 
             btnLogOut.addEventListener('click', () => {
                 localStorage.clear();
