@@ -58,6 +58,5 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('js/dropdown-menu.js') }}"></script>
     <script src="{{ asset('js/generate-jwt-token.js') }}"></script>
 @endpush
