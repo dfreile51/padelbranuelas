@@ -2,13 +2,15 @@
 @use '../../base/mixins' as m;
 
 #menu {
-    background-color: #111827;
+    height: 100%;
     width: 0;
     position: fixed;
     z-index: 2;
-    height: 100%;
-    overflow: auto;
-    transition: width .5s;
+    top: 0;
+    left: 0;
+    background-color: #111827;
+    overflow-x: hidden;
+    transition: .5s;
 
     @include m.tablet {
         width: 30rem;
