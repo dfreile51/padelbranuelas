@@ -73,7 +73,7 @@ class ReservaController extends Controller
 
         $validator = Validator::make($request->all(), [
             'fecha' => 'required|date_format:Y-m-d',
-            'hora' => 'required'
+            'hora' => 'required|date_format:H:i'
         ]);
 
         if ($validator->fails()) {
