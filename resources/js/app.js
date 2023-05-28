@@ -21,7 +21,7 @@ if (document.querySelector('#dropzone')) {
                 imagenPublicada.name = document.querySelector('[name="imagen"]').value;
 
                 this.options.addedfile.call(this, imagenPublicada);
-                this.options.thumbnail.call(this, imagenPublicada, `/torneos/${imagenPublicada.name}`);
+                this.options.thumbnail.call(this, imagenPublicada, `/uploads/${imagenPublicada.name}`);
 
                 imagenPublicada.previewElement.classList.add('dz-success', 'dz-complete');
             }

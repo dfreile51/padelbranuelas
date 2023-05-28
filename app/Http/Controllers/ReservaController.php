@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Reserva;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Validator;
 
 class ReservaController extends Controller
 {
@@ -70,10 +71,15 @@ class ReservaController extends Controller
             ], 401);
         }
 
-        if (empty($request->fecha) || empty($request->hora)) {
+        $validator = Validator::make($request->all(), [
+            'fecha' => 'required|date_format:Y-m-d',
+            'hora' => 'required'
+        ]);
+
+        if ($validator->fails()) {
             return response()->json([
-                "status" => false,
-                "message" => "Debe indicar la fecha y la hora"
+                'success' => false,
+                'errors' => $validator->errors()
             ], 400);
         }
 
