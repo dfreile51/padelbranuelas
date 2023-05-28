@@ -165,10 +165,12 @@
     @auth
         <script>
             const userId = document.querySelector('span.hidden').textContent;
-            const btnLogOut = document.querySelector('.btnLogOut');
+            const btnsLogOut = document.querySelectorAll('.btnLogOut');
 
-            btnLogOut.addEventListener('click', () => {
-                localStorage.clear();
+            btnsLogOut.forEach(btnLogOut => {
+                btnLogOut.addEventListener('click', () => {
+                    localStorage.clear();
+                });
             });
 
             if (!localStorage.getItem('user_id') || localStorage.getItem('user_id') !== userId) {
