@@ -75,8 +75,8 @@ class TorneoController extends Controller
     {
         $this->validate($request, [
             'titulo' => 'required|max:255',
-            'fecha_inicio' => 'required',
-            'fecha_fin' => 'required',
+            'fecha_inicio' => 'required|date_format:Y-m-d',
+            'fecha_fin' => 'required|date_format:Y-m-d',
             'email' => 'required|email|max:60',
             'descripcion' => 'required',
             'imagen' => 'required'

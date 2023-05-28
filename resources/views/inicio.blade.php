@@ -53,7 +53,7 @@
                     <span>Torneos</span>
                 </div>
             </a>
-            <a href="#" class="card__item">
+            <a href="https://www.ayuntamientovillagatonbranuelas.es/" class="card__item">
                 <img src="{{ asset('imgs/cards/ayuntamiento.png') }}" alt="Imagen Ayuntamiento">
                 <div class="card__item--text">
                     <span>Web Ayuntamiento</span>

@@ -18,7 +18,11 @@
                             <h3>{{ $torneo->titulo }}</h3>
                             <p>{{ $torneo->fecha_inicio }} - {{ $torneo->fecha_fin }}</p>
                             <span class="info__card--email">Email contacto: <span>{{ $torneo->email }}</span></span>
-                            <p>{{ $torneo->descripcion }}</p>
+                            <p>
+                                @php
+                                    echo nl2br($torneo->descripcion);
+                                @endphp
+                            </p>
                         </div>
                     </div>
                 </div>
